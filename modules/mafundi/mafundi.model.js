@@ -4,20 +4,19 @@ const Schema = mongoose.Schema;
 const MafundiSchema = new Schema({
     firstName: {
         type: String,
-        required: true
+        required: [true, 'First name is required!'],
     },
     middleName: {
         type: String,
-        required: true
+        required: [true, 'Middle name is required!'],
     },
     lastName: {
         type: String,
-        required: true
+        required: [true, 'Last name is required!'],
     },
     username: {
         type: String,
-        required: true,
-        unique:true,
+        required: [true, ' username is required!'],
     },
     gender: {
         type: String,
