@@ -1,7 +1,7 @@
 const mongoose=require('mongoose');
 module.exports = async () => {
     try {
-        const connection = await mongoose.connect('mongodb://localhost:27017/my_database', {
+        const connection = await mongoose.connect(process.env.DATABASE, {
             useNewUrlParser: true,
             useUnifiedTopology: true
         });
