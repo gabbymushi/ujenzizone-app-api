@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 const MafundiSchema = new Schema({
     user: {
         type: Schema.Types.ObjectId,
+        ref:'User',
         required: [true, 'User ID  is required!'],
     },
     category: {
