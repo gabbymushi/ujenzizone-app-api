@@ -1,9 +1,9 @@
-const Mafundi = require('./mafundi.model');
+const Mafundi = require('./mafundi.service');
 
 exports.getMafundi = async (req,res) => {
     try {
-       const fundi= await Mafundi.find({});
-       res.status(200).json(fundi);
+       const fundi= await Mafundi.getMafundi();
+       return res.status(200).json(fundi);
     } catch (e) {
         res.status(500).json(e.message);
     }
@@ -11,7 +11,7 @@ exports.getMafundi = async (req,res) => {
 exports.create = async (req,res) => {
     try {
        const fundi= await Mafundi.create(req.body);
-       res.status(200).json(fundi);
+       return res.status(200).json(fundi);
     } catch (e) {
         res.status(500).json(e.message);
     }

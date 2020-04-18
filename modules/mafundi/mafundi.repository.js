@@ -1,8 +1,8 @@
-const mafundiRepository = require('./mafundi.repository');
+const Mafundi = require('./mafundi.model');
 
 exports.getMafundi = async () => {
     try {
-       const fundi= await mafundiRepository.getMafundi();
+       const fundi= await Mafundi.find({});
        return fundi;
     } catch (e) {
         throw new Error(e.message);
@@ -10,7 +10,7 @@ exports.getMafundi = async () => {
 }
 exports.create = async (body) => {
     try {
-       const fundi= await mafundiRepository.create(body);
+       const fundi= await Mafundi.create(body);
        return fundi;
     } catch (e) {
         throw new Error(e.message);

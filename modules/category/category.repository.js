@@ -1,8 +1,8 @@
-const categoryRepository = require('./category.repository');
+const Category = require('./category.model');
 
 exports.geCategories = async () => {
     try {
-       const categories= await categoryRepository.geCategories();
+       const categories= await Category.find({});
        return categories;
     } catch (e) {
         throw new Error(e.message);
@@ -10,7 +10,7 @@ exports.geCategories = async () => {
 }
 exports.createCategory = async (payload) => {
     try {
-       const category= await categoryRepository.createCategory(payload);
+       const category= await Category.create(payload);
        return category;
     } catch (e) {
         throw new Error(e.message);
