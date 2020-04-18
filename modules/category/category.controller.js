@@ -1,18 +1,19 @@
-const Category = require('./category.model');
+const categoryService = require('./category.service');
 
-exports.geCategories = async (req,res) => {
+exports.geCategories = async (req, res) => {
     try {
-       const categories= await Category.find({});
-       res.status(200).json(categories);
+        const categories = await categoryService.geCategories();
+        return res.status(200).json(categories);
     } catch (e) {
-        res.status(500).json(e.message);
+        return res.status(500).json(e.message);
     }
 }
-exports.createCategory = async (req,res) => {
+exports.createCategory = async (req, res) => {
     try {
-       const category= await Category.create(req.body);
-       res.status(200).json(category);
+        const payload = req.body;
+        const category = await categoryService.createCategory(payload);
+        return res.status(200).json(category);
     } catch (e) {
-        res.status(500).json(e.message);
+        return res.status(500).json(e.message);
     }
 }
