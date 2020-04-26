@@ -11,10 +11,10 @@ exports.getMafundi = async () => {
 }
 exports.create = async (body) => {
     try {
-        const user = await userRepository.create(body);
-        const fundiDetails = { user: user._id, category };
+        const user = await userRepository.createUser(body);
+        const fundiDetails = { user: user._id, category: body.category };
         const fundi = await mafundiRepository.create(fundiDetails);
-        return fundi;
+        return user;
     } catch (e) {
         throw new Error(e.message);
     }
