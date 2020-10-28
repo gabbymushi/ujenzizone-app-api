@@ -18,6 +18,7 @@ export const getMafundi = async (categoryId: string | null) => {
         throw new Error(e.message);
     }
 }
+
 export const create = async (body: IMafundi) => {
     try {
         const fundi = await Mafundi.create(body);

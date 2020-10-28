@@ -3,6 +3,7 @@ export interface IMafundi extends Document {
     fundi: string,
     category: string
 };
+
 const MafundiSchema = new Schema({
     fundi: {
         type: Schema.Types.ObjectId,
@@ -15,4 +16,5 @@ const MafundiSchema = new Schema({
         required: [true, 'Category  is required!'],
     }
 });
+
 export default model<IMafundi>('Mafundi', MafundiSchema);

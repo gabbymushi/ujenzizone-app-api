@@ -10,6 +10,7 @@ export const getMafundi = async (req: Request, res: Response) => {
         res.status(500).json(e.message);
     }
 }
+
 export const create = async (req: Request, res: Response) => {
     try {
         const fundi = await mafundiService.create(req.body);

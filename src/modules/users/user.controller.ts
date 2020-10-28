@@ -9,6 +9,7 @@ export const getUsers = async (req:Request, res:Response) => {
         res.status(500).json(e.message);
     }
 }
+
 export const createUser = async (req:Request, res:Response) => {
     try {
         const user = await userService.createUser(req.body);

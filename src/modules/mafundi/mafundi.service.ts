@@ -11,6 +11,7 @@ export const getMafundi = async (categoryId: string) => {
         throw new Error(e.message);
     }
 }
+
 export const create = async (body: any) => {
     try {
         const user = await userRepository.createUser(body);
