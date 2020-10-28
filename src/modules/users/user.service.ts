@@ -9,6 +9,7 @@ export const getUsers = async () => {
         throw new Error(e.message);
     }
 }
+
 export const createUser = async (body: IUser) => {
     try {
         const user = await userRepository.createUser(body);

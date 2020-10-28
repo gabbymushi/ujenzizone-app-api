@@ -8,6 +8,7 @@ export const getUsers = async () => {
         throw new Error(e.message);
     }
 }
+
 export const createUser = async (body:IUser) => {
     try {
        const user= await User.create(body);
